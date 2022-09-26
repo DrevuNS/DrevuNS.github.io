@@ -1,4 +1,4 @@
-document.body.onload = function() {
+function ff() {
 
     setTimeout(function() {
         var loader = document.getElementById('page-loader');
