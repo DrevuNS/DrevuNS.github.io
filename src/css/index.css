@@ -1,3 +1,5 @@
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- дефолтные данные -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
 *{
     padding: 0;
     margin: 0;
@@ -18,6 +20,7 @@ nav, footer, header, content{display: block;}
 html, body{
 height:100%;
 overflow-x: hidden;
+cursor: default;
 width:100%;
 font-size: 100%;
 line-height: 1;
@@ -45,6 +48,77 @@ button:hover {
 
 }
 
+button:active {
+
+    opacity: 0.9;
+
+    background-color: #263244;
+
+    color: #fcfdfd;
+
+    transform: scale(1.1);
+
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+preloader
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.loader {
+
+    width: 75px;
+
+    height: 75px;
+
+    border: 10px solid white;
+
+    border-radius: 50%;
+
+    border-top-color: #d17700;
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    animation: spin 1.75s linear infinite;
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+@keyframes spin {
+
+    0% {
+
+        transform: translate(-50%, -50%) rotate(0deg);
+
+    }
+
+    100% {
+
+        transform: translate(-50%, -50%) rotate(360deg);
+
+    }
+
+}
+
+    .done {
+
+        opacity: 0;
+
+        visibility: hidden;
+
+    }
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- первый блок головы
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
 .first_block_header {
 
     width: 100%;
@@ -64,6 +138,24 @@ button:hover {
     margin-left: 390px;
 
     float: left;
+
+    animation: comming 2s;
+
+}
+
+@keyframes comming {
+
+    from {
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+    }
 
 }
 
@@ -93,6 +185,38 @@ h1 {
 
     align-items: center;
 
+    animation: topshift 2s ease forwards;
+
+}
+
+@keyframes topshift {
+
+    from {
+
+        opacity: 0;
+
+        margin-left: -80px;
+
+        margin-top: -80px;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        margin-top: 0;
+
+        margin-left: 340px;
+
+    }
+
+}
+
+.first_block_link:nth-child(2) {
+
+    animation-delay: 0.4s;
+
 }
 
 .header_h {
@@ -103,11 +227,21 @@ h1 {
 
     font-size: 13px;
 
+    transition: all 0.2s;
+
 }
 
 .header_h:hover {
 
     color: rgb(216, 216, 216);
+
+}
+
+.header_h:active {
+
+    color: rgb(216, 216, 216);
+
+    transform: scale(1.1);
 
 }
 
@@ -119,6 +253,12 @@ h1 {
 
     background: url(../img/head.png) right bottom/40% no-repeat local, url(../img/head1.png) center/100% no-repeat local;
 
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
 }
 
 .first_block_content {
@@ -128,10 +268,8 @@ h1 {
     height: 500px;
 
     float: left;
-    
-    margin-left: 400px;
 
-    margin-top: 400px;
+    display: none;
 
 }
 
@@ -152,6 +290,10 @@ h1 {
     text-align: center;
 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    /* opacity: 0; */
+
+    /* display: none; */
 
 }
 
@@ -210,6 +352,8 @@ h1 {
 
     font-size: 15px;
 
+    transition: all 0.2s;
+
 }
 
 .first_block_btn2 {
@@ -230,7 +374,11 @@ h1 {
 
     font-size: 15px;    
 
+    transition: all 0.2s;
+
 }
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- первый блок контента -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 .first_content_block {
 
@@ -348,6 +496,8 @@ h1 {
 
     font-size: 15px;
 
+    transition: all 0.2s;
+
 }
 
 .first_content_img1 {
@@ -357,6 +507,8 @@ h1 {
     margin-top: 1px;
 
 }
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- второй блок контента -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 .second_content_block {
 
@@ -519,11 +671,13 @@ h1 {
 
 }
 
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- третий блок контента -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
 .third_content_block {
 
     width: 100%;
 
-    height: 120vh;
+    height: 1100px;
 
     background-color: #fcfdfd;
 
@@ -579,125 +733,114 @@ h1 {
 
     font-family: Arial, Helvetica, sans-serif;
 
+    padding: 10px;
+
 }
 
 .third_content_photo {
 
-    margin-top: 50px;
+    margin: auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
 
 }
 
-.third_content_txt2 {
+.third_content_container {
+
+    width: 50%;
 
     margin: auto;
 
-    margin-top: -200px;
+    display: flex;
+
+    justify-content: space-around;
+
+    align-items: center;
+
+}
+
+.third_content_description {
+
+    color: #263244;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 25px;
+
+}
+
+.third_content_description_mini {
+
+    color: #263244;
+
+    font-family: Arial, Helvetica, sans-serif;
     
-    width: 60%;
-
-}
-
-.third_content_description2 {
-
-    color:#263244;
-
-    font-size: 25px;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-}
-
-.third_content_description_mini1 {
-
-    color:#263244;
-
-    font-size: 16px;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-}
-
-.third_content_description3 {
-
-    color:#263244;
-
-    font-size: 25px;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-}
-
-.third_content_description_mini2 {
-
-    color:#263244;
-
-    font-size: 16px;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-}
-
-.third_content_button{
-
-    width: 60%;
-
-    margin: auto;
-
-    margin-top: 20px;
+    font-size: 15px;
 
 }
 
 .third_content_btn {
 
-    background-color: #63b5ae;
-
-    color: #d17700;
+    background-color: #0a976d;
 
     border-radius: 4px;
+
+    color: #d17700;
 
     font-family: Arial, Helvetica, sans-serif;
 
     font-size: 16px;
 
-    padding: 10px 25px;
+    padding: 6px 15px;
+
+    transition: all 0.2s;
+
+}
+
+.third_content_btn:active {
+
+    opacity: 0.9;
+
+    background-color: #d17700;
+
+    color: #0a976d;
 
 }
 
 .third_content_txt3 {
 
-    width: 40%;
-
-    margin-left: 35%;
-
-    margin-top: -160px;
+    margin-left: 40px;
 
 }
 
-.third_content_description4 {
 
-    color:#263244;
-
-    font-size: 25px;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-}
-
-.third_content_description_mini3 {
-
-    color:#263244;
-
-    font-size: 16px;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-}
-
-.fourth_content_block {
+.fourth_content_container {
 
     width: 100%;
 
-    height: 60vh;
+    height: auto;
+
+    padding: 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background-color: #fcfdfd;
+
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- четвёртый блок контента -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.fourth_content_block {
+
+    width: 50%;
 
     background-color: #fcfdfd;
 
@@ -717,17 +860,13 @@ h1 {
 
 .fourth_content_inputs {
 
-    width: 50%;
-
-    height: 98%;
-
     margin: auto;
 
     margin-top: 2%;
 
 }
 
-h3 {
+.fourth_content_item {
 
     font-family: Arial, Helvetica, sans-serif;
 
@@ -750,6 +889,8 @@ h3 {
     background-color: #eeeeee;
 
     border-radius: 4px;
+
+    cursor: pointer;
 
 }
 
@@ -821,8 +962,7 @@ h3 {
 
 }
 
-
-
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- пятый блок контента -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 .fifth_content_block {
 
@@ -964,6 +1104,8 @@ h3 {
 
 }
 
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------шестой блок контента -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
 .sixth_content_block {
 
     width: 100%;
@@ -1065,6 +1207,8 @@ h3 {
     padding: 40px;
 
 }
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- седьмой блок контента ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 .seventh_content_block {
 
@@ -1327,7 +1471,7 @@ h3 {
 
 .seventh_content_btn {
 
-    border: 4px solid #fcfdfd;
+    border: 2px solid #fcfdfd;
 
     border-radius: 4px;
 
@@ -1336,6 +1480,8 @@ h3 {
     padding: 10px 25px;
 
     color: #fcfdfd;
+
+    transition: all 0.2s;
 
 }
 
